@@ -43,7 +43,7 @@ As an example I’ll set a time limit of 7 and go through the branch of path: A-
 ## The problems solving this
 For this example it's easy to just generate and calculate every single path, which in this case would just be 6 paths. However in the actual input of the assignment there will be 14 other nodes in the graph, and generating the path for every node in this case will be significantly bigger as this approach does not scale well at all. For this example graph it’s just 3!(6) paths, but for a graph with 14 other nodes it would be 14! (87178291200) paths to generate. See below how this distance graph is a lot more complex than the example.
 
-![real diagram distance map](/assets/images/aoc2022_day16/real_diagram.svg)
+![real diagram distance map](assets/images/aoc2022_day16/real_diagram.svg)
 
 ## Solution
 One observation that can be made is that the tree of all combinations would become extremely wide but would still have a depth of just 14 levels. A depth first search(DFS) would be a viable solution and wouldn’t fill up all memory. Let's get back to the example and see how this would look with a recursive DFS.
