@@ -13,9 +13,9 @@ I will use a very small version of the problem to simplify the explanation. We s
 <br/>
 
 
-![example_diagram](/assets/images/aoc2022_day16/example_diagram_1.svg){: style="float: left; margin: 0px 100px 0px 50px"}
+![example_diagram]({{site.url}}/assets/images/aoc2022_day16/example_diagram_1.svg){: style="float: left; margin: 0px 100px 0px 50px"}
 
-![example_diagram_distance_map](/assets/images/aoc2022_day16/example_diagram_2.svg)
+![example_diagram_distance_map]({{site.url}}/assets/images/aoc2022_day16/example_diagram_2.svg)
 
 ### The goal
 In the assignment you are given 'X' amount of minutes to generate the highest possible value. 2 variables that will be initiated here are the `flowrate` which is 0 when you start, and the `total_value`. For every single minute you are moving, the `total_value` gets incremented with this `flowrate` amount.
@@ -24,7 +24,7 @@ As you can see all the nodes have values, if you get to a node you have the choi
 
 In the graph below I've generated all the paths you can take with this example.
 
-![example_diagram_all_paths](/assets/images/aoc2022_day16/example_diagram_3.svg)
+![example_diagram_all_paths]({{site.url}}/assets/images/aoc2022_day16/example_diagram_3.svg)
 
 As an example I’ll set a time limit of 7 and go through the branch of path: A-B-C-D. This branch will produce a value of 64 as you can see in the table below. Notice how we actually don’t go to node D anymore. Despite the fact that we can still reach it and open it within the remaining minutes, it’s simply useless because the once D is open the time will have reached the limit, thus not adding anything anymore to the `total_value`. If we had 1 more minute however we still could've benefit from node D. The time limit is an important factor in the real graph, as not every node is going to be reachable in a path.
 
@@ -43,12 +43,12 @@ As an example I’ll set a time limit of 7 and go through the branch of path: A-
 ## The problems solving this
 For this example it's easy to just generate and calculate every single path, which in this case would just be 6 paths. However in the actual input of the assignment there will be 14 other nodes in the graph, and generating the path for every node in this case will be significantly bigger as this approach does not scale well at all. For this example graph it’s just 3!(6) paths, but for a graph with 14 other nodes it would be 14! (87178291200) paths to generate. See below how this distance graph is a lot more complex than the example.
 
-![real diagram distance map](assets/images/aoc2022_day16/real_diagram.svg)
+![real diagram distance map]({{site.url}}/assets/images/aoc2022_day16/real_diagram.svg)
 
 ## Solution
 One observation that can be made is that the tree of all combinations would become extremely wide but would still have a depth of just 14 levels. A depth first search(DFS) would be a viable solution and wouldn’t fill up all memory. Let's get back to the example and see how this would look with a recursive DFS.
 
-![example_diagram_all_paths](/assets/images/aoc2022_day16/example_diagram_3.svg){: }
+![example_diagram_all_paths]({{site.url}}/assets/images/aoc2022_day16/example_diagram_3.svg){: }
 
 The variables that we need to track in each recursive call to traverse this tree are: `current_node`, `flowrate`, `remaining_time`, `opened_nodes`. We always call the recursive function from A, as that’s always our starting point. The first thing we have to do is get the neighbor nodes that haven’t been opened yet and are reachable within the given remaining time. We’ll set the time at 7 minutes again, starting from A all nodes are reachable which are B, C, D. The next step is to loop through these nodes and call this recursive function on each node, with its updated params. For example we'll start by calling the function on the first neighbor, node B, update the remaining time by subtracting the time it took to get to B(1) and open it(1), add its value to the flowrate(10), and add A to the opened_nodes list since that’s where we’re coming from. Note how in this pattern, we won’t get to the iteration of C and D before the branch of B is fully traversed. This saves a lot of memory especially in larger trees.
 
