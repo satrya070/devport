@@ -54,8 +54,7 @@ The variables that we need to track in each recursive call to traverse this tree
 
 Eventually we will land in the left bottom leaf of the tree as there won’t be any neighbors left at some point, and that will be the recursion's base case(stopping condition). From node B we can only explore A-B-C and A-B-D. With 7 minutes we don’t have enough time to reach the last node anymore in either path. A-B-C will yield the 64 we calculated earlier, and A-B-D will yield 65, so the maximum value for that node B(from A) is 65. After that it will move back to the upper recursive function and continue its loop on the neighbors, which is to fully traverse node C, and then B. In the recursive function the output that every neighbor node produces is saved in a list so that when we’re done traversing each neighbor, we know which one produces the highest value which is the one we will return.
 
-When the whole tree is traversed it get back to first recursive call which is A, with all the maximum values generated for B, C, D.
-B produces.. .. ..
+When the whole tree is traversed it get back to first recursive call which is A, which have returned with the maximum values generated for B, C, D. The maximum value for branch B which we calculated earlier is 65, for C it's 80, and for the D it's 75. We can now answer the question of the assignment, 80 is the maximum value that can be produced in this example graph with a time limit of 7 minutes.
 
 The flow in pseudo code:
 ```
@@ -88,6 +87,7 @@ recursive_function(params: current_node, flowrate, opened_nodes, remaining_time)
     # return maximum of `neighbors_max_values`
 ```
 
+Check out the the actual code here which also includes this example graph [here](https://github.com/satrya070/aoc2022/blob/main/day_16.py). For any questions you can also contact me via this github.
 
 
 
