@@ -1,22 +1,26 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+Hello, my name Satrya and .. interest data science, game dev, more about me here. This just a place where I'd just like to save some of the things that I have been doing and found interesting. Plus it's just a very good exercise to document these things to reinforcing my knowledge on these topics.
+<p>
+{% for post in site.posts %}
+    <div>
+    {{post.title}}
+    </div>
+{% endfor %}
+</p>
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+<!-- {% for post in posts %}
+    {{ post.title }} asdf
+{% endfor %} -->
 
-More specifically, the created site:
+<!-- This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details. -->
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+<!-- If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages. -->
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-To get started with creating a site, just click "[use this template]"!
 
 ----
 

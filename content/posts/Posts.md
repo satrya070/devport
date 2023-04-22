@@ -1,6 +1,6 @@
----
+<!-- ---
 layout: default
-title: Posts
-nav_order: 1
+title: Posts2
+nav_order: 2
 has_children: true
----
+--- -->
