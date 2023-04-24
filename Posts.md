@@ -8,7 +8,7 @@ nav_order: 2
     <div>
     {{post.title}}
     {{post.name}}
-    {{post.url}}
+    <a href="{{post.url}}">link</a>
     </div>
 {% endfor %}
 </div>
