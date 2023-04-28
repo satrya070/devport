@@ -3,12 +3,16 @@ title: Posts
 layout: default
 nav_order: 2
 ---
-<div>
+All my posts!
 {% for post in site.posts %}
-    <div>
-    {{post.title}}
-    {{post.name}}
-    <a href="{{post.url}}">link</a>
+<div class="post">
+    <div class="thumb">
+        <a href="{{post.url}}">
+            <img src="{{site.url}}/assets/thumbnails/advent-day16.png">
+        </a>
     </div>
-{% endfor %}
+    <div class="title-block">
+        <a href="{{post.url}}">{{post.title}}</a>
+    </div>
 </div>
+{% endfor %}

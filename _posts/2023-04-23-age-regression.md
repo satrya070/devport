@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Age prediction/regression with image recognition (Pytorch)
+title: Age prediction with Pytorch image recognition
 ---
 # Age regression with image recognition (Pytorch)
 ---

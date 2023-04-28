@@ -3,26 +3,29 @@ title: Home
 layout: home
 nav_order: 1
 ---
-
-Hello, my name Satrya and .. interest data science, game dev, more about me here. This just a place where I'd just like to save some of the things that I have been doing and found interesting. Plus it's just a very good exercise to document these things to reinforcing my knowledge on these topics.
 <p>
-{% for post in site.posts %}
-    <div>
-    {{post.title}}
-    </div>
-{% endfor %}
+Hello, my name is Satrya and I like basically like anything related to programming, algorithms, game development, math and that type of stuff. Currently I'm working as a Data Scientist where my main focus is building image recognition models. This is a place where I'd just like to post some of the things that I've worked on or found interesting. Plus it's just a very good exercise to document the things I do to reinforce my knowledge on these topics. To find out more about me in specifics check out the About page.
 </p>
+---
+
+{% for post in site.posts %}
+<div class="post">
+    <div class="thumb">
+        <a href="{{post.url}}">
+            <img src="{{site.url}}/assets/thumbnails/advent-day16.png">
+        </a>
+    </div>
+    <div class="title-block">
+        <a href="{{post.url}}">{{post.title}}</a>
+    </div>
+</div>
+{% endfor %}
+<!--<button>See all posts</button>-->
+
 
 <!-- {% for post in posts %}
     {{ post.title }} asdf
 {% endfor %} -->
-
-<!-- This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details. -->
-
-<!-- If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages. -->
-
-
-----
 
 [^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
 
