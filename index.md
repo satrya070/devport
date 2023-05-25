@@ -1,24 +1,31 @@
 ---
 title: Home
 layout: home
+nav_order: 1
+---
+<p>
+Hi, my name is Satrya and currently I'm working as a Data Scientist where my main focus is building image recognition models mixed with some software and data engineering. Anything related to programming, algorithms, game dev, math and that type of stuff is interesting to me. This is a place where I'll post some of the things that I've worked on or found interesting. Plus it's just a very good exercise to document the things I do to reinforce my knowledge on these topics. To find out more about me in specifics check out the About page.
+</p>
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+{% for post in site.posts %}
+<div class="post">
+    <div class="thumb">
+        <a href="{{post.url}}">
+            <img src="{{site.url}}/assets/thumbnails/{{post.title | downcase | replace: ' ', '-' }}.png">
+        </a>
+    </div>
+    <div class="title-block">
+        <a href="{{post.url}}">{{post.title}}</a>
+    </div>
+</div>
+{% endfor %}
+<!--<button>See all posts</button>-->
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
 
-More specifically, the created site:
-
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
-
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
-
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
-
-To get started with creating a site, just click "[use this template]"!
-
-----
+<!-- {% for post in posts %}
+    {{ post.title }} asdf
+{% endfor %} -->
 
 [^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
 
