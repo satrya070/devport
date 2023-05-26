@@ -17,7 +17,7 @@ Hi, my name is Satrya and currently I'm working as a Data Scientist where my mai
 
 <div class="post">
     <div class="thumb">
-        <a href="{{post_url}}">
+        <a href="{{site.url}}{{post.url}}">
             <img src="{{site.url}}/assets/thumbnails/{{post.title | downcase | replace: ' ', '-' }}.png">
         </a>
     </div>
