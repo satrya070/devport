@@ -4,17 +4,13 @@ layout: home
 nav_order: 1
 ---
 <p>
-Hi, my name is Satrya and currently I'm working as a Data Scientist where my main focus is building image recognition models mixed with some software and data engineering. Anything related to programming, algorithms, game dev, math and that type of stuff is interesting to me. This is a place where I'll post some of the things that I've worked on or found interesting. Plus it's just a very good exercise to document the things I do to reinforce my knowledge on these topics. To find out more about me in specifics check out the About page.
+Hi, my name is Satrya and currently I'm working as a Data Scientist where my main focus is building image recognition models mixed with some software and data engineering.
+<br />
+Anything related to programming, algorithms, game dev, math and that type of stuff is interesting to me. This is a place where I'll post some of the things that I've worked on or found interesting. Plus it's just a very good exercise to document the things I do to reinforce my knowledge on these topics. To find out more about me in specifics check out the About page.
 </p>
 ---
 
 {% for post in site.posts %}
-{% if jekyll.environment == "development" %}
-    {% assign post_url = post.url %}
-{% else %}
-    {% assign post_url = site.url | append: "devport" | append: post.url %}
-{% endif %}
-
 <div class="post">
     <div class="thumb">
         <a href="{{site.url}}{{post.url}}">
