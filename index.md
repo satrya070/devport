@@ -15,6 +15,7 @@ Hi, my name is Satrya and currently I'm working as a Data Scientist where my mai
 {% else %}
     {% assign post_url = "devport" | append: post.url %}
 {% endif %}
+{{jekyll.environment}}
 
 <div class="post">
     <div class="thumb">
