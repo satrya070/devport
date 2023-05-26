@@ -1,11 +1,11 @@
 title: Satrya
 description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
-# remote_theme: just-the-docs/just-the-docs@v0.5.1
+
+permalink: /:year/:month/:day/:title/
 
 
-
-url: https://satrya070.github.io/devport/
+# url: https://satrya070.github.io/devport/
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
