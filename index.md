@@ -9,9 +9,16 @@ Hi, my name is Satrya and currently I'm working as a Data Scientist where my mai
 ---
 
 {% for post in site.posts %}
+
+{% if jekyll.environment == "development" %}
+    {% assign post_url = post.url %}
+{% else %}
+    {% assign post_url = "devport" | append: post.url %}
+{% endif %}
+
 <div class="post">
     <div class="thumb">
-        <a href="{{post.url}}">
+        <a href="{{post_url}}">
             <img src="{{site.url}}/assets/thumbnails/{{post.title | downcase | replace: ' ', '-' }}.png">
         </a>
     </div>
@@ -22,10 +29,6 @@ Hi, my name is Satrya and currently I'm working as a Data Scientist where my mai
 {% endfor %}
 <!--<button>See all posts</button>-->
 
-
-<!-- {% for post in posts %}
-    {{ post.title }} asdf
-{% endfor %} -->
 
 [^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
 
