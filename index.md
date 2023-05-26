@@ -9,7 +9,7 @@ Hi, my name is Satrya and currently I'm working as a Data Scientist where my mai
 ---
 
 {% for post in site.posts %}
-
+{{post.url}}
 {% if jekyll.environment == "development" %}
     {% assign post_url = post.url %}
 {% else %}
