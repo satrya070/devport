@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Raycasting with pygame
+title: Raycasting with Pygame
 ---
 # Raycasting
 ---
