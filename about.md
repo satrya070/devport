@@ -1,6 +1,7 @@
 ---
-title: About
+title: About2
 layout: default
+nav_order: 4
 ---
 ## Origin
 Hi there, my name is Satrya and I am based in The Netherlands, The Hague where I've pretty much lived my whole life, and my family roots lie in Indonesia. Currently I am a Data Scientist that mostly focusses on building image recognition models with Pytorch. I also work on data and software engineering pipelines, which I do more on the side.
