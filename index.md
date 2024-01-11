@@ -6,7 +6,7 @@ nav_order: 1
 <p>
 Hi, my name is Satrya and currently I'm working as a Data Scientist where my main focus is building image recognition models mixed with some software and data engineering.
 <br />
-Anything related to programming, algorithms, game dev, math and that type of stuff is interesting to me. This is a place where I'll post some of the things that I've worked on or found interesting. Plus it's just a very good exercise to document the things I do to reinforce my knowledge on these topics. To find out more about me in specifics check out the <a href="{{site.url}}/About">About</a> page.
+Anything related to programming, algorithms, game dev, math and that type of stuff is interesting to me. This is a place where I'll post some of the things that I've worked on or found interesting. Plus it's just a very good exercise to document the things I do to reinforce my knowledge on these topics. To find out more about me in specifics check out the <a href="{{site.url}}/About/about.html">About</a> page.
 </p>
 ---
 
