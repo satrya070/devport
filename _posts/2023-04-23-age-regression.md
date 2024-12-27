@@ -4,10 +4,12 @@ title: Age prediction with Pytorch image recognition
 ---
 # Age regression with image recognition (Pytorch)
 ---
-There isn’t that much out there about doing regression based on image recognition or at least a lot less than I’d expect, so I wanted to do a post on how you can simply implement it with Pytorch. On Kaggle there’s a decent dataset with image samples for the age range of 0-100. I figured this was a good example dataset to apply regression on based on image recognition. I’ll be going through the process of implementing this and discuss the most important parts of the code. I also leave a link here to the complete code. The focus here is just getting to a working base model, and not getting the most optimized model possible. Note that I do assume the reader has some kind of knowledge on Pytorch or Tensorflow.
+<div class="intro">
+There isn’t that much out there about doing regression based on image recognition or at least a lot less than I’d expect, so I wanted to do a post on how you can implement in a simple way with Pytorch. On Kaggle there’s a decent dataset with image samples for people aged in the age range of 0-100. I figured this was a good enough dataset to apply regression on, based on image recognition. I’ll be going through the process of implementing this and discuss the relevant parts of the code. There is a link to the code here. Note that ehe focus here is just getting to a working base model, and not a super optimized model. It's best read a bit of knowledge on Pytorch or Tensorflow.
+</div>
 
 ## Inspecting the dataset
-The dataset has been divided into a train/test split, with the train split having 185632 samples, and the test split having 47568. This is definitely a good amount of samples to train a working model at the least. Note, that normally you’d of course also have a validation split  to validate your training, but for simplicity I’ll use the train/test split as is. In terms of quality all images are 125x125 so it is a bit on the lower side. When inspecting some samples some people look younger/older than the label says so there might be some error in the labels, but most of it seems close enough. See some samples in the image below:
+The dataset has been divided into a train/test split, where the train split has 185632 samples, and the test split 47568. This is definitely a good amount of samples to train with to get a working model. Note, that normally you’d of course also have a validation split to validate your training, but for simplicity I’ll use the train/test split as is. In terms of quality all images are 125x125 so it is a bit on the lower quality side. When inspecting some samples some people look younger/older than the label says so there might be some error in the labels, but most of it seems correct (enough). See some samples in the image below:
 
 ![dataset samples]({{site.url}}/assets/images/age-regression/dataset_samples.png)
 
@@ -134,10 +136,7 @@ I have also plotted the not so good results here below. The first one is off by 
 
 ![better predictions]({{site.url}}/assets/images/age-regression/worse_samples.png)
 
-## Takeaways
-Next steps that you could take to really get an optimized model would be: training longer, training more layers, experimenting with learning rates, adding some augmentation, trying different Resnets or other networks, among other things. For a good working regression predictor it would also help a lot to have good quality data, and really do checks on the dataset to make sure the groundtruth is correct as that can definitely also hurt performance.
+## Conclusions
+To optimize the model a step you'd definitely have to take is do some data cleanup. From inspecting the dataset I feel like the percentage of errors is big enough where it's noticeably affecting the model performance. My guess is that this would raise the model performance the most, as good data is vital to a good model. Other steps that could be taken after this is: more training iterations, adding some data augmentation, training more layers, experimenting with different learning rates, trying different Resnets or other networks, among other things.
 
-Anyways I hope this was interesting or helped, for questions you can always contact me via Github.
-
-
-
+I hope this read was helped or was interesting, and for questions you can always contact me via this Github.

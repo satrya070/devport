@@ -1,8 +1,8 @@
 ---
 title: About
-layout: default
+layout: about-layout
 has_children: true
 nav_order: 3
 ---
 ## About
-I have divided this into sections to get to specific parts quickly.
+Anything 3D.
