@@ -5,9 +5,11 @@ title: Raycasting with Pygame
 # Raycasting
 ---
 
-Raycasting is a cool concept in game development technique that was used to create some of the first ‘3D’ games like Wolfenstein. It’s relatively easy to build a basic 3D environment like that in the Pygame engine, and a good exercise to apply trigonometry in game dev. Pygame is a code only engine and more barebone than a game engine like Unity, so you’ll really get an in-depth understanding in how to implement Raycasting. As my knowledge of Pygame is sparse I mostly used this video to help me build a basic implementation, and in this post I’ll dissect all key parts you need to get a working Raycasting implementation. This is also to reinforce my own understanding as well as for others who are learning it.
+<div class="intro">
+Raycasting is a cool technique in game development that was used to create some of the first ‘3D’ games like Wolfenstein. It’s relatively easy to build a basic 3D environment like that, and Pygame is good tool to build it with. Pygame is a code only engine and more barebone than a game engine like Unity, so you’ll get an good in-depth understanding in how to implement Raycasting. As my experience with Pygame in specific is sparse, I used this video to help me build a basic implementation, and in this post I’ll dissect all key parts needed to get to a simple working Raycasting implementation. This was to reinforce my own understanding as well as for others who are learning it.
+</div>
 
-The repository with all the code can be found [here](https://github.com/satrya070/raycasting). The raycasting logic parts contain a lot comments as it is meant clear up and make it as understandable as much as possible.
+The repository with all the code can be found [here](https://github.com/satrya070/raycasting). The raycasting logic parts contain a lot comments to make it as clear as possible.
 
 ![raycasting]({{site.url}}/assets/images/raycasting/raycasting.gif)
 
@@ -28,27 +30,25 @@ The Raycasting technique starts with shooting out rays and calculating the dista
 
 ![ray_calculation_1]({{site.url}}/assets/images/raycasting/ray_calculation_1.jpg){: style="width: 600px; margin: 20px 0;"}
 
-The white dot represents the player, the line the ray, and the dark blocks are walls. The map is basically grid and grids can be set to be walls. In the illustration you can also see the verticals(green lines) and the horizontals(red lines). These will be essential in calculating the distance.
+The white dot represents the player, the line the ray, and the dark blocks are walls. The map is basically grid and grids can be set to be walls. In the illustration you can also see the verticals(green lines) and the horizontals(red lines) which will be essential in calculating the distance.
 
-When we do a distance calculation for a ray, we set the limit to look 20 blocks ahead. This limit needs to be there in the case that a ray does not hit any object, this prevents infinite look ahead. For each ray there will be a calculation loop of 20 iterations. If a ray hits a wall before that, then the calculation is done for that ray, and will move on to the next one. In one calculation iteration the closest next vertical line intersection, and the closest horizontal intersection line is calculated. Above you can see that we've done 2 iterations, and that the ray has reached a wall and therefor is done with that ray. The green and red dots on the ray line indicated where it has intersected with the verticals and horizontals. The reason we need to calculate for both is to get the exact distance to the wall. We see that the wall was reached in the second iteration, but for the second horizontal calcultion it has passed the wall. So when a wall has been reached, we always take the shortest lines, which in the case is the last vertical calculation (where the green dot reaches the wall).
+When we do a distance calculation for a ray, we set the limit to viewing 20 blocks ahead. For each ray there will be a calculation loop of max 20 iterations. If a ray finds/hits a wall before that, then the calculation is done for that ray, and then we can move to the next ray. In an iteration the next closest intersection of the ray with a vertical and horizontal gridline is calculated. Above you can see that we've done 2 iterations and that a wall was intersected, which means the distance calculation for that ray is done. The green and red dots on the ray line indicated where it has intersected with the vertical and horizontal gridline. The reason we calculate for both here is to get the exact distance to the wall. We see that the wall was reached in the second iteration, and that the vertical intersection was the one to intersect the wall (the horizontal line intersects passed the wall).
 
-The calculation of the vertical and horizontal line calculations can all be done with trigonometry using the maptile position, and player position and angle. Below I've made an indepth illustration of how the calculations are done. These calculations can also be found in the code. I'd advise you to really go through it if you strongly need to understand it.
+With some basic trigonometry and the maptile position, player position, and angle of the ray, we can do this calculation. Below I've made an illustration of how the calculations are done. These calculations can also be found in the code to get the best understanding.
 
 ![ray_calculation_2]({{site.url}}/assets/images/raycasting/ray_calculation_2.jpeg){: style="width: 700px; margin: 20px 0;"}
 
-Above you can see that from the player position we first calculate the distance to the very next vertical and horizontal line. From then on we can keep incrementing the vertical and horizontal lines checks by 1 until we hit 20 increments or have found wall intersection.
+You can see that from the player position we first calculate the distance to the very next vertical and horizontal line. From then on we can keep incrementing the vertical and horizontal lines checks by 1 until we hit the limit (20 iterations) or have found a wall intersection.
 
 ### Rays cast
 
-In the real thing there's of course numerous rays casted. In this implementation the player is set to have a FOV(field of view) of 60 degrees. Within this FOV 320 rays are cast, so there is a ray every 0.1875 degree (60 / 320).
+In the real thing there's of course numerous of rays casted. In this implementation the player is set with a field of view(FOV) of 60 degrees. Within this FOV 320 rays are cast.
 
 ![raycasts]({{site.url}}/assets/images/raycasting/rayscast.jpg){: style="width: 400; margin: 20px 0;"}
 
-Below you can see how it looks in Pygame, and that every ray distance calculation stops when it reaches a wall.
+Below you can see how it looks in Pygame, and that every ray distance calculation stops when it reaches a wall. This is basically all the data that we'll need to create the 3D projection, which we'll do in the next section. In a game for example you could use this as a mini-map.
 
 ![raycasting_map]({{site.url}}/assets/images/raycasting/raycasting_map.gif){: style="width: 400; margin: 20px 0;"}
-
-In the next sections we'll do the projection, in which we'll actually draw the 3D environment. Here the map and player drawing is turned off here for simplicity of the program, but it is being processed in the background as that's what the whole 3D projection is based on. Normally you would draw somewhere on the screen for example as a minimap too see where the player is moving.
 
 ### Projection
 For the projection of the height we determine a projection plane distance from a triangle that we make from half the distance of the width(320 pixels). See the illustration below how the this visually is determined. It's basically the distance we get from using a field of view of 60 degree(for the triangle we take the half which is 30), and calculating the distance we need to cover the full width which is: `320 / tan(30) = 554` pixels. With 320 rays being cast each ray projection will account for 2 pixels in the width on the projection plane, adding up to the 640 width we have set.
