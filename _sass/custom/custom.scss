@@ -202,3 +202,10 @@
       border-radius: $tab-wrap-border-radius;
     }
   }
+
+  .tags {
+    li {
+      display: inline;
+      list-style-type: none;
+    }
+  }

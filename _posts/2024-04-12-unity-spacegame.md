@@ -9,7 +9,7 @@ This project is a 3D action space game that I made in Unity. I wanted to create 
 </div>
 
 Tools
-<ul>
+<ul class="tags">
     <li>Unity 3D</li>
     <li>C#</li>
 </ul>
