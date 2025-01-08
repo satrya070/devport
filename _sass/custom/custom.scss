@@ -63,52 +63,52 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0px 2px;
+  background: #32557f;
+  display: inline-block;
+  color: #fff;
+  border-radius: 3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+
+.panels {
+  background: #fff;
+  box-shadow: 0 2rem 2rem #00000080;
+  min-height: 200px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.panel {
+  display: none;
+  animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
-  
-  .tab {
-    cursor: pointer;
-    padding: 10px 20px;
-    margin: 0px 2px;
-    background: #32557f;
-    display: inline-block;
-    color: #fff;
-    border-radius: 3px 3px 0px 0px;
-    box-shadow: 0 0.5rem 0.8rem #00000080;
+  to {
+    opacity: 1;
   }
-  
-  .panels {
-    background: #fff;
-    box-shadow: 0 2rem 2rem #00000080;
-    min-height: 200px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 3px;
-    overflow: hidden;
-    padding: 20px;
-  }
-  
-  .panel {
-    display: none;
-    animation: fadein 0.8s;
-  }
-  
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .panel-title {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  .radio {
-    display: none;
-  }
+}
+
+.panel-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.radio {
+  display: none;
+}
 
 
 
@@ -203,9 +203,36 @@
     }
   }
 
-  .tags {
-    li {
-      display: inline;
-      list-style-type: none;
-    }
+.tags {
+  padding-top: 0.4em;
+  padding-left:2px !important;
+  li {
+    display: inline;
+    list-style-type: none;
+    background: #292929;
+    padding: 8px;
+    color: #d4c2d3;
+    letter-spacing: 0.03em;
+    border-radius: 2.5px;
+    font-size: 0.85em;
+    margin-right: 2px;
   }
+  li::before {
+    content: none !important;
+  }
+}
+
+.site-footer {
+  display: none;
+}
+
+.post-date {
+  position: relative;
+  span {
+    position: absolute;
+    top: -60px;
+    right: 0px;
+    font-size: 0.8em;
+    color: #8c73a0;
+  }
+}

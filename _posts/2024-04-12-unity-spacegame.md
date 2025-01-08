@@ -4,11 +4,13 @@ title: 3D spacegame in Unity
 ---
 # 3D spacegame in Unity
 ---
+<div class="post-date">
+    <span>{{page.date | date: "%Y.%m.%d" }}</span>
+</div>
 <div class="intro">
 This project is a 3D action space game that I made in Unity. I wanted to create a vehicle controlled type of game, and space environments are always awesome to me, so I decided to make a basic space game with 3 various levels where the player controls a spaceship. The focus of this project was making a good working game, meaning making all technical/functional mechanics work well. Note that the visual aspect was not the focus for me, and that almost all assets were collected. I did of course still try to make it look somewhat decent. In the post I will go in depth on all the elements.
 </div>
 
-Tools
 <ul class="tags">
     <li>Unity 3D</li>
     <li>C#</li>
@@ -53,7 +55,7 @@ Like said before, this aspect was not the focus of this project. All the assets 
 
 
 ## Conlusion
-It took me some time to complete as my time to work on it was restricted, as I was doing it beside a full time coding job. I’m content with the end result, as I accomplished my goal of making a decent functional prototype 3D space game. I had already made some small 2D games with Unity, but not a proper 3D one yet. There are of course things that aren’t perfectly refined as can be seen in the video, but that’s out of scope as it’s not something I was to ship out.
-I definitely learned a lot from this project and got better in a lot of aspects: implementing basic mechanics (combat, collision, movement) in 3D, management of the game (levels, music, menus, transitioning), and application of 3D math(vector math).
+It took me some time to complete as my time to work on it was restricted, as I was doing it beside a full time coding job. I’m content with the end result, as I accomplished my goal of making a decent functional prototype 3D space game. I had already made some small 2D games with Unity, but not a proper 3D one yet. There are of course things that aren’t perfectly refined as can be seen in the video, but that’s out of scope as it’s not something I was to ship out. <br/><br/>
+I definitely learned a lot from this project and got better in a lot of aspects: implementing basic mechanics (combat, movement, health) in 3D, management of the game (levels, music, menus, transitioning), and application of 3D math(vector math).
 
 
