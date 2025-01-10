@@ -4,12 +4,20 @@ title: Raycasting with Pygame
 ---
 # Raycasting
 ---
-
+<div class="post-date">
+    <span>{{page.date | date: "%Y.%m.%d" }}</span>
+</div>
 <div class="intro">
 Raycasting is a cool technique in game development that was used to create some of the first ‘3D’ games like Wolfenstein. It’s relatively easy to build a basic 3D environment like that, and Pygame is good tool to build it with. Pygame is a code only engine and more barebone than a game engine like Unity, so you’ll get an good in-depth understanding in how to implement Raycasting. As my experience with Pygame in specific is sparse, I used this video to help me build a basic implementation, and in this post I’ll dissect all key parts needed to get to a simple working Raycasting implementation. This was to reinforce my own understanding as well as for others who are learning it.
 </div>
 
-The repository with all the code can be found [here](https://github.com/satrya070/raycasting). The raycasting logic parts contain a lot comments to make it as clear as possible.
+<ul class="tags">
+    <li>Python</li>
+    <li>Pygame</li>
+    <li>raycasting</li>
+</ul>
+
+The repository with all the code can be found <a href="https://github.com/satrya070/raycasting" target="_blank">here</a>. The raycasting logic parts contain a lot comments to make it as clear as possible.
 
 ![raycasting]({{site.url}}/assets/images/raycasting/raycasting.gif)
 
@@ -51,29 +59,24 @@ Below you can see how it looks in Pygame, and that every ray distance calculatio
 ![raycasting_map]({{site.url}}/assets/images/raycasting/raycasting_map.gif){: style="width: 400; margin: 20px 0;"}
 
 ### Projection
-For the projection of the height we determine a projection plane distance from a triangle that we make from half the distance of the width(320 pixels). See the illustration below how the this visually is determined. It's basically the distance we get from using a field of view of 60 degree(for the triangle we take the half which is 30), and calculating the distance we need to cover the full width which is: `320 / tan(30) = 554` pixels. With 320 rays being cast each ray projection will account for 2 pixels in the width on the projection plane, adding up to the 640 width we have set.
-
+I’ve set the `screen_distance` to 554 pixels, meaning the distance from the screen to the camera position. This screen is called the projection plane which ultimately renders what we will see. It’s just the distance or focal length you get from the triangle with a base of 320 (screen width / 2) that’s 30°(fov / 2), see the visual below. 
 
 ![screen_distance]({{site.url}}/assets/images/raycasting/screen_distance.jpg){: style="width: 100%; margin: 20px 0;"}
-
-The projection of the height is done by dividing the `screen_distance` by the maptile distance. This `height_projection` tells us how high in pixels the object will be in the projection plane. To get the start position of the y coordinate, we take half of the height of the screen (240) minus the half of the `height_projection`. Below are examples of how it looks with a maptile distance of 1 and 1.154.
+I’ve set the length of 1 unit or tile in the grid, equal to the screen_distance of 554 pixels. The projection of the height is done by dividing the `screen_distance` by the depth of the ray. This `height_projection` tells us how the height of the object is in pixels on the projection plane from that distance. To get where the start y coordinate(top) of an object, we take half of the screen(240) minus half of the `height_projection`. This will give the start of the y coordinate. With the top y coordinate known, we also know the bottom of the y coordinate by simply adding the height of the object to the top y coord. See the below figure to see how that looks.
 
 ![height_projection_examples]({{site.url}}/assets/images/raycasting/height_projections.png){: style="width: 100%; margin: 20px 0;"}
 
-For the first first above example we see how it would get projected with a distance of 1. As for the calculation of projecting the block lets go through the earlier defined calculations with these samples. We first get the heigh_projection by doing: `554 / 1 = 554`, so at a distance of 1 a block will just have have a height of 554 pixels. Then we calculate the the y starting position by doing half_height - half_projection_height, which is `240 - 277 = -37`. Notice how the block can't be fully projected in from this distance. In the samples next to it we have the minimal distance it takes to fully project a wall block on the screen. As the heigh_projection is `480 (554 / 1.154)` and the starting position is `0 (240 - 240)`
-
-Note that the vertical FOV has a different angle with this calculation than the horizontal FOV. When projecting the blocks it will be a little wider then it is tall, which is the expected behaviour here. See below:
-
-![screen_distance]({{site.url}}/assets/images/raycasting/height_fov.jpg){: style="width: 100%; margin: 20px 0;"}
+With a depth/distance of 1.154 for example the height would be equal to the viewport height. The object half height 240 (1.154 / 554 / 2 = 240), and the top y coordinate is the half height minus the viewport height minus which is 0 (240 - 240).
 
 
-### Fish eye correction
-When we use the above height projection calculation it doesn't actually fully correctly projects everything yet. When we look at the wall line in the FOV, the distance from the wall line to the player can be different at any point on the wall basically. So when we the heigh projection calculation on a ray at the very left or right of the FOV, we end up with different projections than the ray which is perpendicular to the wall and has the shortest distance to the wall (the angle of the player). This difference causes the fisheye effect you see below where the further the wall point is from the player, the smaller the projections get.
+### Fisheye effect
+At this point it works but not fully correct yet, as things are being projected with a fisheye effect. When standing directly in front of a block, the middle ray that's being casted is perfectly perpendicular to the camera and the object. However every other ray (slightly) isn’t, and will have depth that’s actually slightly longer, the longer the ray cast is, the “further” it will be projected on the plane, which causes this fisheye effect which you can see below.
 
-In order to fix that we need the length of every ray to be as long as the ray that's directly perpendicular. This can be easily achieved by doing this calculation for every ray: <br>
-`distance * cos(player.angle - ray.angle)`.
-Below on the right you see how it looks when all projection points all have the same distance now. Now the projection of the wall is perfectly straight like we want. 
+![fisheye_effect]({{site.url}}/assets/images/raycasting/fisheye.png){: style="width: 100%; margin: 20px 0;"}
+
+Luckily the fix is simply by just multiplying the length of the ray the cosine of the angle which means every ray its length gets cut to the same length. On the figure below on the right you see the top view where the rays get shortened with the cosine multiplication, causing them to get projected correctly.
+
 
 ![fisheye_correction]({{site.url}}/assets/images/raycasting/fisheye_correction.png){: style="width: 100%; margin: 20px 0;"}
-
-This pretty much documents everything already about this basic raycasting implementation. The calculations can take a little bit time to go through but in the end it's not all that much or hard. I hope it was helpful in any way or at least interesting to read about it.
+<hr/>
+And that’s all there is to building a simple raycaster in with Python. This is definitely a fun project that I’d recommend if you’re interested in projecting stuff in “3D” if you haven’t done it before. The implementation can be simple, doesn’t require too much hassle, and the math is just some normal trigonometry. I hope the read was interesting and for questions you can just hit me up on Github.

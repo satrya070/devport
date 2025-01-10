@@ -4,6 +4,9 @@ title: Age prediction with Pytorch image recognition
 ---
 # Age regression with image recognition (Pytorch)
 ---
+<div class="post-date">
+    <span>{{page.date | date: "%Y.%m.%d" }}</span>
+</div>
 <div class="intro">
 There isn’t that much out there about doing regression based on image recognition or at least a lot less than I’d expect, so I wanted to do a post on how you can implement in a simple way with Pytorch. On Kaggle there’s a decent dataset with image samples for people aged in the age range of 0-100. I figured this was a good enough dataset to apply regression on, based on image recognition. I’ll be going through the process of implementing this and discuss the relevant parts of the code. There is a link to the code here. Note that ehe focus here is just getting to a working base model, and not a super optimized model. It's best read a bit of knowledge on Pytorch or Tensorflow.
 </div>
@@ -144,5 +147,6 @@ I have also plotted the not so good results here below. The first one is off by 
 
 ## Conclusions
 To optimize the model a step that definitely has to taken is to do some data cleanup. From inspecting the dataset I get the sense that the percentage of errors is significant enough to where it's affecting the model performance. My initial guess is that this one of the big things that will raise the model performance, as good data is just vital to a good model. In this case especially for the younglings where the performance is bad. From experience doing data cleanups can sometimes give the model quite a boost in performance. Other steps that could be taken after this is: more training iterations, adding some data augmentation, training more layers, experimenting with different learning rates, trying different Resnets or other networks, among other things.
-<br/><br/>
-I hope this read was helped or was interesting, and for questions you can always contact me via this Github.
+
+<hr/>
+I hope this read was helped or was interesting, and for questions you can always contact me via my Github.

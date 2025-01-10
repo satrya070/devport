@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 <p>
-Hi, I’m Satrya and I’m interested in anything to do with programming, math, graphics and all things related. I’ve studied computer science, and have 5+ years professional experience working as a data scientist building image recognition models and doing software engineering tasks.
+Hi, I’m Satrya and I’m interested in anything to do with programming, math, graphics, and just <b>anything 3D</b>. I’ve studied computer science, and have 5+ years professional experience working as a data scientist building image recognition models and doing software engineering tasks.
 <br/>
 In the last years I’ve taken a strong interest in 3D applications, learning Unity, Unreal Engine, and currently diving into graphics programming now.
 Feel free to check out some of the stuff I've built on below, and my skills on <a href="{{site.url}}/About/about.html">this</a> page.
