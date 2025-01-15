@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Raycasting with Pygame
+categories: ["front_page", "graphics"]
 ---
 # Raycasting
 ---

@@ -12,6 +12,7 @@ Feel free to check out some of the stuff I've built on below, and my skills on <
 ---
 
 {% for post in site.posts %}
+{% if post.categories contains "front_page" %}
 <div class="post">
     <div class="thumb">
         <a href="{{site.url}}{{post.url}}">
@@ -23,6 +24,7 @@ Feel free to check out some of the stuff I've built on below, and my skills on <
         <a href="{{post.url}}">{{post.title}}</a>
     </div>
 </div>
+{% endif %}
 {% endfor %}
 <!--<button>See all posts</button>-->
 
