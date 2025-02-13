@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 3D spacegame in Unity
-categories: ["front_page", "graphics"]
+categories: ["graphics"]
 ---
 # 3D spacegame in Unity
 ---

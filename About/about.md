@@ -6,6 +6,7 @@ nav_order: 4
 ---
 # About
 <hr/>
+Just an informal about that goes a little bit deeper in my journey with learning and some personal info.
 
 ## Education
 ### MBO (2011-2015)

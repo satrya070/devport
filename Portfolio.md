@@ -7,7 +7,7 @@ nav_order: 2
 <hr>
 
 ## Graphics
-<p>All works to do with Engines</p>
+<p>All works to do with graphics programming and engines.</p>
 {% for post in site.posts %}
 {% if post.categories contains "graphics" %}
 <div class="post">
@@ -26,7 +26,6 @@ nav_order: 2
 <br/><br/>
 
 <h2 style="display:block; float:left; width: 100%">Algorithms</h2>
-<p>Work to do algorithm stuff</p>
 {% for post in site.posts %}
 {% if post.categories contains "algorithm" %}
 <div class="post">
@@ -44,8 +43,8 @@ nav_order: 2
 {% endfor %}
 <br/><br/>
 
-<h2 style="display:block; float:left; width: 100%">Algorithms</h2>
-<p style="float:left; width:100%;">Work to do Machine learning models and stuff</p>
+<h2 style="display:block; float:left; width: 100%">AI - Machine learning</h2>
+<!--<p style="float:left; width:100%;">Work to do Machine learning models and stuff</p>-->
 {% for post in site.posts %}
 {% if post.categories contains "ML" %}
 <div class="post">
