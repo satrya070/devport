@@ -6,7 +6,7 @@ nav_order: 4
 ---
 # About
 <hr/>
-Just an informal about that goes a little bit deeper in my journey with learning and some personal info.
+<i style="color: #6e6e6e">Just an informal about that goes a little bit deeper into my learning journey with some personal info.</i>
 
 ## Education
 ### MBO (2011-2015)
