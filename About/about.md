@@ -23,4 +23,4 @@ While I like data science and software engineering a lot, I wasn’t fully satis
 
 
 ## Personal
-My hobbies are gaming, and watching series and sports. These are things that I like to do when I relax. I also like to be active physically and practise breakdance tricks. 
+My hobbies are some casual gaming, eating, and watching series and sports, or these are things that I like to do to relax at least. Sports I like to watch are football and various martial arts. Games I’m currently playing are Elden Ring and GTA4. I also like to be physically active and practise breakdance tricks and some running.
