@@ -14,6 +14,7 @@ To learn more about ray tracers I followed the notorious guide of building a ray
 <ul class="tags">
     <li>C++</li>
     <li>raytracing</li>
+    <li>multithreading</li>
 </ul>
 
 ![raytracer image]({{site.url}}/assets/images/cpu-raytracer/renderedImage.png)
