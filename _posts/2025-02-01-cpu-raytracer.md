@@ -9,7 +9,7 @@ categories: ["front_page", "graphics"]
     <span>{{page.date | date: "%Y.%m.%d" }}</span>
 </div>
 <div class="intro">
-To learn more about ray tracers I followed the notorious guide of building a ray tracer in a weekend, which shows how to build a ray tracer from scratch with spheres as objects using the CPU. I’ve implemented multithreading to speed up the rendering process. I’ve also implemented triangles geometries.
+To learn more about ray tracers I followed the notorious guide of building a ray tracer in a weekend, which shows how to build a ray tracer from scratch with spheres as objects using the CPU. I’ve implemented multithreading to speed up the rendering process. I’ve also implemented triangles geometries. Find the repository <a href="https://github.com/satrya070/RayTracingMt/tree/multithread" target="_blank">here</a>.
 </div>
 <ul class="tags">
     <li>C++</li>

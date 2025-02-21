@@ -9,7 +9,7 @@ categories: ["front_page", "graphics"]
     <span>{{page.date | date: "%Y.%m.%d" }}</span>
 </div>
 <div class="intro">
-In the past I had worked with height data of the Netherlands (data source: Actueel Hoogtebestand Nederland), which was always pretty good open data. What I would do was extract heights from it for certain buildings, which is just a simple number. What I always wanted to do however was visualise it in some kind of 3D environment. To do that openGL is just perfect for that. I will explain how I went about it, and some optimizations I applied using tessellation. See below what it looks like.
+In the past I had worked with height data of the Netherlands (data source: Actueel Hoogtebestand Nederland), which was always pretty good open data. What I would do was extract heights from it for certain buildings, which is just a simple number. What I always wanted to do however was visualise it in some kind of 3D environment. To do that openGL is just perfect for that. I will explain how I went about it, and some optimizations I applied using tessellation. See below what it looks like. Find the repository <a href="https://github.com/satrya070/HeightRendererOG" target="_blank">here</a>.
 </div>
 <ul class="tags">
     <li>openGL</li>
