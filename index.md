@@ -10,7 +10,7 @@ In the last years I’ve taken a strong interest in 3D applications, learning Un
 Feel free to check out some of the stuff I've built on below, and my skills on <a href="{{site.url}}/About/about.html">this</a> page.
 </p>-->
 <p>
-My name is <b>Satrya Sabeni</b> and I’m a programmer with 5+ years experience in data science and software engineering, building image recognition models and data pipelines. In the last few years I’ve taken a strong interest in 3D applications, namely graphics programming, building rendering based applications and games using technologies like openGL and Unreal Engine. <br/>This is where I document and share the interesting projects I’ve created. Feel free to check out my <a href="{{site.url}}/Portfolio.html">work</a> and <a href="{{site.url}}/Skillset.html">skills</a>.
+My name is <b>Satrya Sabeni</b> and I’m a programmer with 5+ years experience in data science and software engineering, building image recognition models and data pipelines. The last few years I’ve also taken a strong interest in 3D applications, building rendering based applications and games, using technologies like openGL and Unreal Engine. This is the place where I document and share the interesting projects I’ve done. Feel free to check out my <a href="{{site.url}}/Portfolio.html">work</a> and <a href="{{site.url}}/Skillset.html">skills</a>.
 </p>
 ---
 
@@ -30,13 +30,3 @@ My name is <b>Satrya Sabeni</b> and I’m a programmer with 5+ years experience 
 {% endif %}
 {% endfor %}
 <!--<button>See all posts</button>-->
-
-
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
-
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate

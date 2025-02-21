@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 3D spacegame in Unity
-categories: ["graphics"]
+categories: ["front_page", "graphics"]
 ---
 # 3D spacegame in Unity
 ---
@@ -9,7 +9,7 @@ categories: ["graphics"]
     <span>{{page.date | date: "%Y.%m.%d" }}</span>
 </div>
 <div class="intro">
-This project is a 3D action space game that I made in Unity. I wanted to create a vehicle controlled type of game, and space environments are always awesome to me, so I decided to make a basic space game with 3 various levels where the player controls a spaceship. The focus of this project was making a good working game, meaning making all technical/functional mechanics work well. Note that the visual aspect was not the focus for me, and that almost all assets were collected. I did of course still try to make it look somewhat decent. In the post I will go in depth on all the elements.
+This project is a 3D action space game that I made in Unity. I wanted to create a vehicle controlled type of game, and space environments are always awesome to me, so I decided to make a basic space game with 3 various levels where the player controls a spaceship. The focus of this project was making a good working game, meaning making all technical/functional mechanics work well. Note that the visual aspect was not the focus for me, and that almost all assets were collected. I did of course still try to make it look somewhat decent. In the post I will go in depth on all the elements. View the repository <a href="https://github.com/satrya070/SimpleSpaceGame" target="_blank">here</a>.
 </div>
 
 <ul class="tags">

@@ -26,20 +26,20 @@ While I enjoyed it a lot, there I was still missing something. I was still eager
 <hr/>
 <div class="stackbox">
     <!--<h3>Stack</h3>-->
-    <b>Languages:</b> c++, Python, SQL, html/css, glsl. <br/>
+    <b>Languages:</b> c++, Python, C#, SQL, html/css, glsl. <br/>
     <b>Tools:</b> Visual Studio/Code, git, bash, openGL, Unreal Engine, Pytorch, Unity, DBeaver, AWS.
     <b>Methodologies: </b> Scrum. <br/>
-    <b>Degrees:</b> Computer Science Bh, MBO Digital Media Design.
+    <b>Degrees:</b> Computer Science BSc, MBO Digital Media Design.
 </div>
 
 <div class="skillsum">
     <ul>
     <li>Implement graphics programming methods like model loading, tessellation, ray tracing, lighting.</li>
+    <li>Gameplay programming with Unreal Engine and Unity.</li>
+    <li>Software development processes: unit testing, debug, code review, refactoring, collaboration.</li>
     <li>Scaling up applications with parallelization, cloud computing.</li>
     <li>Data analysis with geometry data.</li>
     <li>Train deep learning image segmentation models on custom data.</li>
     <li>Engineer Machine learning pipelines.</li>
-    <li>Software development processes: unit testing, debug, code review, refactoring, collaboration.</li>
-    <li>Gameplay programming with Unreal Engine and Unity.</li>
     </ul>
 </div>
