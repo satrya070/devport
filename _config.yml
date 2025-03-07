@@ -7,6 +7,9 @@ url: https://satrya070.github.io/devport/
 aux_links:
   LinkedIn: https://github.com/just-the-docs/just-the-docs-template
 
+collections:
+  glossary:
+    output: true
 
 # footer content
 # footer_content: "Copyright &copy; 2017-2020 Patrick Marsceill. Distributed by an <a href=\"https://github.com/just-the-docs/just-the-docs/tree/main/LICENSE.txt\">MIT license.</a>"
