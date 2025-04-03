@@ -21,6 +21,13 @@ My name is <b>Satrya Sabeni</b> and I’m a programmer with 5+ years experience 
         <a href="{{site.url}}{{post.url}}">
             <img src="{{site.url}}/assets/thumbnails/{{post.title | downcase | replace: ' ', '-' | replace: '.', '' }}.png">
             <span class="date-tag">{{post.date | date: "%Y-%m-%d" }}</span>
+            <ul class="mini-tags">
+            {% for tag in post.tags limit: post.num_tags %}
+                <li>
+                {{tag}}
+                </li>
+            {% endfor %}
+            </ul>
         </a>
     </div>
     <div class="title-block">

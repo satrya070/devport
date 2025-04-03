@@ -241,3 +241,25 @@
     color: #8c73a0;
   }
 }
+
+.mini-tags {
+  position: absolute;
+  top: 75px;
+  padding-left:12px !important;
+  li {
+    list-style-type: none;
+    background: #806cce;
+    padding: 1px 5px;
+    color: #e5e5e5;
+    letter-spacing: 0.03em;
+    border-radius: 2.5px;
+    font-size: 0.7em;
+    //margin-right: 2px;
+    //margin-top:3px;
+    margin: 4px 2px;
+    display:inline-block;
+  }
+  li::before {
+    content: none !important;
+  }
+}

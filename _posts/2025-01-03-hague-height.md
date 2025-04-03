@@ -2,6 +2,8 @@
 layout: post
 title: Hague height rendering openGL
 categories: ["front_page", "graphics"]
+tags: ["C++", "openGL", "Python", "tesselation"]
+num_tags: 3
 ---
 # Rendering heightmap of the Hague in openGL
 ---
