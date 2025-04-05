@@ -2,6 +2,8 @@
 layout: post
 title: Raycasting with Pygame
 categories: ["front_page", "graphics"]
+tags: ["Python", "Pygame", "Raycasting"]
+num_tags: 3
 ---
 # Raycasting
 ---
@@ -13,9 +15,9 @@ Raycasting is a cool technique in game development that was used to create some 
 </div>
 
 <ul class="tags">
-    <li>Python</li>
-    <li>Pygame</li>
-    <li>raycasting</li>
+    {% for tag in page.tags %}
+        <li>{{tag}}</li>
+    {% endfor %}
 </ul>
 
 The repository with all the code can be found <a href="https://github.com/satrya070/raycasting" target="_blank">here</a>. The raycasting logic parts contain a lot comments to make it as clear as possible.

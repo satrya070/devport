@@ -15,6 +15,13 @@ nav_order: 2
         <a href="{{site.url}}{{post.url}}">
             <img src="{{site.url}}/assets/thumbnails/{{post.title | downcase | replace: ' ', '-' | replace: '.', '' }}.png">
             <span class="date-tag">{{post.date | date: "%Y-%m-%d" }}</span>
+            <ul class="mini-tags">
+            {% for tag in post.tags limit: post.num_tags %}
+                <li>
+                {{tag}}
+                </li>
+            {% endfor %}
+            </ul>
         </a>
     </div>
     <div class="title-block">
@@ -33,6 +40,13 @@ nav_order: 2
         <a href="{{site.url}}{{post.url}}">
             <img src="{{site.url}}/assets/thumbnails/{{post.title | downcase | replace: ' ', '-' | replace: '.', '' }}.png">
             <span class="date-tag">{{post.date | date: "%Y-%m-%d" }}</span>
+            <ul class="mini-tags">
+            {% for tag in post.tags limit: post.num_tags %}
+                <li>
+                {{tag}}
+                </li>
+            {% endfor %}
+            </ul>
         </a>
     </div>
     <div class="title-block">
@@ -52,6 +66,13 @@ nav_order: 2
         <a href="{{site.url}}{{post.url}}">
             <img src="{{site.url}}/assets/thumbnails/{{post.title | downcase | replace: ' ', '-' | replace: '.', '' }}.png">
             <span class="date-tag">{{post.date | date: "%Y-%m-%d" }}</span>
+            <ul class="mini-tags">
+            {% for tag in post.tags limit: post.num_tags %}
+                <li>
+                {{tag}}
+                </li>
+            {% endfor %}
+            </ul>
         </a>
     </div>
     <div class="title-block">

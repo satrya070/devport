@@ -2,6 +2,8 @@
 layout: post
 title: CPU multithreaded Raytracer
 categories: ["front_page", "graphics"]
+tags: ["C++", "Multithreading", "Raytracing"]
+num_tags: 2
 ---
 # CPU based Raytracer with multithreading
 ---
@@ -12,9 +14,9 @@ categories: ["front_page", "graphics"]
 To learn more about ray tracers I followed the notorious guide of building a ray tracer in a weekend, which shows how to build a ray tracer from scratch with spheres as objects using the CPU. I’ve implemented multithreading to speed up the rendering process. I’ve also implemented triangles geometries. Find the repository <a href="https://github.com/satrya070/RayTracingMt/tree/multithread" target="_blank">here</a>.
 </div>
 <ul class="tags">
-    <li>C++</li>
-    <li>raytracing</li>
-    <li>multithreading</li>
+    {% for tag in page.tags %}
+        <li>{{tag}}</li>
+    {% endfor %}
 </ul>
 
 ![raytracer image]({{site.url}}/assets/images/cpu-raytracer/renderedImage.png)
