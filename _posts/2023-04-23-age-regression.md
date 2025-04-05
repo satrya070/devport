@@ -2,6 +2,8 @@
 layout: post
 title: Age prediction with Pytorch image recognition
 categories: ["ML"]
+tags: ["Python", "Pytorch", "Regression model"]
+num_tags: 2
 ---
 # Age regression with image recognition (Pytorch)
 ---
@@ -13,9 +15,9 @@ There isn’t that much out there about doing regression based on image recognit
 </div>
 
 <ul class="tags">
-    <li>Python</li>
-    <li>Pytorch</li>
-    <li>Regression model</li>
+    {% for tag in page.tags %}
+        <li>{{tag}}</li>
+    {% endfor %}
 </ul>
 
 ## Inspecting the dataset

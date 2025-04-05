@@ -2,6 +2,8 @@
 layout: post
 title: 3D spacegame in Unity
 categories: ["front_page", "graphics"]
+tags: ["Unity 3D", "C#"]
+num_tags: 3
 ---
 # 3D spacegame in Unity
 ---
@@ -13,8 +15,9 @@ This project is a 3D action space game that I made in Unity. I wanted to create 
 </div>
 
 <ul class="tags">
-    <li>Unity 3D</li>
-    <li>C#</li>
+    {% for tag in page.tags %}
+        <li>{{tag}}</li>
+    {% endfor %}
 </ul>
 
 

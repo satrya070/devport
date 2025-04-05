@@ -14,10 +14,9 @@ num_tags: 3
 In the past I had worked with height data of the Netherlands (data source: Actueel Hoogtebestand Nederland), which was always pretty good open data. What I would do was extract heights from it for certain buildings, which is just a simple number. What I always wanted to do however was visualise it in some kind of 3D environment. To do that openGL is just perfect for that. I will explain how I went about it, and some optimizations I applied using tessellation. See below what it looks like. Find the repository <a href="https://github.com/satrya070/HeightRendererOG" target="_blank">here</a>.
 </div>
 <ul class="tags">
-    <li>openGL</li>
-    <li>C++</li>
-    <li>Python</li>
-    <li>tessellation</li>
+    {% for tag in page.tags %}
+        <li>{{tag}}</li>
+    {% endfor %}
 </ul>
 
 <iframe src="https://drive.google.com/file/d/15BBh4c1shRUvqCSEBdFCwi17raC7aOh-/preview" width="736" height="530" allow="autoplay" allow="fullscreen"></iframe>
