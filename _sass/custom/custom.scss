@@ -21,7 +21,7 @@
         transition: .5s ease;
     }
     img:hover{
-      opacity: 0.35;
+      opacity: 0.3;
     }
 }
 .thumb:hover .mini-tags{
@@ -130,5 +130,24 @@
   }
   li::before {
     content: none !important;
+  }
+}
+
+.header-links {
+  list-style-type: none;
+  li {
+    display: inline-block;
+    margin-left:8px;
+    a{
+      margin-top: 10px;
+      display: block;
+      svg {
+        fill: #d0d0d0;
+        transition: .4s ease;
+      }
+    }
+    a:hover svg{
+      fill: #806cce;
+    }
   }
 }

@@ -4,9 +4,6 @@ theme: just-the-docs
 
 url: https://satrya070.github.io/devport/
 
-aux_links:
-  LinkedIn: https://github.com/just-the-docs/just-the-docs-template
-
 collections:
   glossary:
     output: true

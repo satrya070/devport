@@ -4,13 +4,10 @@ layout: home
 nav_order: 1
 ---
 <!--<p>
-Hi, I’m Satrya and I’m interested in anything to do with programming, math, graphics, and just anything <b>3D</b>. I’ve studied computer science, and have 5+ years professional experience working as a data scientist building image recognition models and doing software engineering tasks.
-<br/>
-In the last years I’ve taken a strong interest in 3D applications, learning Unity, Unreal Engine, and currently diving into graphics programming now.
-Feel free to check out some of the stuff I've built on below, and my skills on <a href="{{site.url}}/About/about.html">this</a> page.
+My name is <b>Satrya Sabeni</b> and I’m a programmer with 5+ years experience in data science and software engineering, building image recognition models and data pipelines. The last few years I’ve also taken a strong interest in 3D applications, building rendering based applications and games, using technologies like openGL and Unreal Engine. This is the place where I document and share the interesting projects I’ve done. Feel free to check out my <a href="{{site.url}}/Portfolio.html">work</a> and <a href="{{site.url}}/Skillset.html">skills</a>.
 </p>-->
 <p>
-My name is <b>Satrya Sabeni</b> and I’m a programmer with 5+ years experience in data science and software engineering, building image recognition models and data pipelines. The last few years I’ve also taken a strong interest in 3D applications, building rendering based applications and games, using technologies like openGL and Unreal Engine. This is the place where I document and share the interesting projects I’ve done. Feel free to check out my <a href="{{site.url}}/Portfolio.html">work</a> and <a href="{{site.url}}/Skillset.html">skills</a>.
+Hi, I’m <b>Satrya Sabeni</b> — a programmer with over 5 years of experience in data science and software engineering, having worked on data and ML pipelines. In recent years, I’ve also focused on 3D applications, building rendering tools and games using technologies like OpenGL and Unreal Engine. This <a href="{{site.url}}/Portfolio.html">portfolio</a> showcases the personal projects I’ve worked on — feel free to explore!
 </p>
 ---
 
@@ -36,4 +33,4 @@ My name is <b>Satrya Sabeni</b> and I’m a programmer with 5+ years experience 
 </div>
 {% endif %}
 {% endfor %}
-<!--<button>See all posts</button>-->
+
