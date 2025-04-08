@@ -33,4 +33,4 @@ Hi, I’m <b>Satrya Sabeni</b> — a programmer with over 5 years of experience 
 </div>
 {% endif %}
 {% endfor %}
-<!--<button>See all posts</button>-->
+
